@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Guru</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Guru" %></title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-</body>
+  <body class="body-app">
+    <section class="full-height row header">
+      <div class="small-4 columns text-left">
+        <h1>Guru</h1>
+      </div>
+      <div class="small-8 medium-4 columns text-right gamer">
+      </div>
+    </section>
+
+    <%= yield %>
+
+    <section>
+
+    </section>
+  </body>
 </html>
