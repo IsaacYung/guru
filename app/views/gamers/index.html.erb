@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Gamers</h1>
+<h2 class="text-center">Adivinhar</h2>
 
 <table>
   <thead>
@@ -23,9 +23,23 @@
         <td><%= link_to 'Destroy', gamer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <section class="row">
+      <div class="small-10 small-centered guru-presenter-symbol center">
+
+      </div>
+    </section>
+    <section class="row numbers">
+      <% for i in 0..100 %>
+        <div class="small-2 columns number text-center">
+          <strong>
+            <%= Random.rand(99) %>
+          </strong>
+        </div>
+      <% end %>
+    </section>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Gamer', new_gamer_path %>
+<%= link_to 'Novo Jogador', new_gamer_path,  class: "button" %>
