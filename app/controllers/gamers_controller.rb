@@ -10,6 +10,7 @@ class GamersController < ApplicationController
   # GET /gamers/1
   # GET /gamers/1.json
   def show
+    @gamers = Gamer.all
   end
 
   # GET /gamers/new
