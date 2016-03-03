@@ -2,44 +2,21 @@
 
 <h2 class="text-center">Adivinhar</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <section class="row">
+    <div class="small-10 small-centered guru-presenter-symbol center">
 
-  <tbody>
-    <% @gamers.each do |gamer| %>
-      <tr>
-        <td><%= gamer.name %></td>
-        <td><%= gamer.email %></td>
-        <td><%= gamer.age %></td>
-        <td><%= link_to 'Show', gamer %></td>
-        <td><%= link_to 'Edit', edit_gamer_path(gamer) %></td>
-        <td><%= link_to 'Destroy', gamer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <section class="row">
-      <div class="small-10 small-centered guru-presenter-symbol center">
-
-      </div>
-    </section>
-    <section class="row numbers">
-      <% for i in 0..100 %>
-        <div class="small-2 columns number text-center">
+    </div>
+  </section>
+  <div class="row numbers">
+    <div class="small-12 medium-8 columns small-centered">
+      <section class="row">
+        <% for i in 0..95 %>
+        <div class="small-3 medium-2 large-1 columns number text-center">
           <strong>
-            <%= Random.rand(99) %>
+            <%= rand(0..99) %>
           </strong>
         </div>
-      <% end %>
-    </section>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Novo Jogador', new_gamer_path,  class: "button" %>
+        <% end %>
+      </section>
+    </div>
+  </div>

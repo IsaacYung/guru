@@ -63,13 +63,14 @@ class GamersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gamer
-      @gamer = Gamer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def gamer_params
-      params.require(:gamer).permit(:name, :email, :age)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gamer
+    @gamer = Gamer.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def gamer_params
+    params.require(:gamer).permit(:name, :email, :age)
+  end
 end

@@ -43,6 +43,8 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rubocop'
+
+  gem 'rspec'
 end
 
 group :development do

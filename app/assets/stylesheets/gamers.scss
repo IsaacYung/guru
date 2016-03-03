@@ -14,6 +14,7 @@
 .body-app {
   background-color: $dark-gray;
   color: $white;
+  position: relative;
 }
 
 .header {
@@ -35,6 +36,15 @@
   }
 }
 
+footer {
+  @extend .header;
+  height: 8rem;
+  width: 100%;
+  margin-top: 5rem;
+
+  position: static;
+}
+
 .guru-presenter-symbol {
   @include gradient(#f75931, #FFBC00);
   height: 12rem;
@@ -43,7 +53,7 @@
 }
 
 .numbers {
-  padding: 1rem;
+  margin: 0.5rem;
 
   .number {
     padding: 10px;
@@ -55,5 +65,18 @@
     &:hover {
       background-color: lighten($dark-gray, 2%);
     }
+  }
+}
+
+@media #{$medium-up} {
+  .numbers {
+    margin: 3rem;
+  }
+}
+
+@media #{$large-up} {
+  footer {
+    position: absolute;
+    bottom: 0;
   }
 }
