@@ -1,6 +1,7 @@
 // Place all the styles related to the Gamers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import "foundation_and_overrides";
 
 @mixin gradient($color-a, $color-b) {
@@ -41,8 +42,7 @@ footer {
   height: 8rem;
   width: 100%;
   margin-top: 5rem;
-
-  position: static;
+  bottom: 0;
 }
 
 .guru-presenter-symbol {
@@ -71,12 +71,5 @@ footer {
 @media #{$medium-up} {
   .numbers {
     margin: 3rem;
-  }
-}
-
-@media #{$large-up} {
-  footer {
-    position: absolute;
-    bottom: 0;
   }
 }

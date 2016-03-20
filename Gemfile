@@ -31,6 +31,8 @@ gem 'foundation-rails'
 
 gem 'angularjs-rails'
 
+gem 'rails-angular-material'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

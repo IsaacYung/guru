@@ -19,7 +19,14 @@
       <div class="small-8 medium-4 columns text-right gamer">
       </div>
     </section>
-
+    <div ng-controller="AppCtrl" ng-cloak="" class="buttondemoBasicUsage" ng-app="MyApps">
+      <md-content>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+          <md-button class="md-raised">Button</md-button>
+          <md-button class="md-raised md-primary">Primary</md-button>
+        </section>
+      </md-content>
+    </div>
     <%= yield %>
 
     <footer class="header">
