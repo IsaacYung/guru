@@ -25,15 +25,45 @@ angular.module('GuruApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache']
       .dark();
   })
 
-  .controller('NewGamerCtrl', function($mdDialog) {
-    this.showPrompt = function() {
-      var confirm = $mdDialog.prompt()
-      .title('O Guru não sabe tudo, me conte')
-      .textContent('Seu email não será mal usado')
-      .placeholder('Seu nome')
-      .ariaLabel('Seu nome')
-      .ok('Jogar');
+  .controller('NewGamerCtrl', function($scope, $mdDialog, $mdMedia) {
+    $scope.showAdvanced = function(ev) {
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
 
-      $mdDialog.show(confirm);
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: 'dialog1.tmpl.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: useFullScreen
+      })
+      .then(function(answer) {
+        $scope.status = 'Bem vindo "' + answer + '".';
+      }, function() {
+        $scope.status = 'Dialogo cancelado.';
+      });
+
+
+
+      $scope.$watch(function() {
+        return $mdMedia('xs') || $mdMedia('sm');
+      }, function(wantsFullScreen) {
+        $scope.customFullscreen = (wantsFullScreen === true);
+      });
+
     };
-  });
+
+  function DialogController($scope, $mdDialog) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+});

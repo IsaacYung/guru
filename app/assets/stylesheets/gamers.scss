@@ -18,6 +18,10 @@
   position: relative;
 }
 
+.md-dialog-content label {
+  color: $white;
+}
+
 .header {
   @include gradient(#f75931, #FFBC00);
 
