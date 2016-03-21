@@ -4,7 +4,7 @@ class GamersController < ApplicationController
   # GET /gamers
   # GET /gamers.json
   def index
-    @gamers = Gamer.all
+    @gamer = Gamer.new
   end
 
   # GET /gamers/1

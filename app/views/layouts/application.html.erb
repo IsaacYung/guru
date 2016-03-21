@@ -7,11 +7,10 @@
     <title><%= content_for?(:title) ? yield(:title) : "Guru" %></title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="body-app">
+  <body class="body-app" ng-app="GuruApp">
     <section class="row header">
       <div class="small-4 columns text-left">
         <h1>Guru</h1>
@@ -19,17 +18,24 @@
       <div class="small-8 medium-4 columns text-right gamer">
       </div>
     </section>
-    <div ng-controller="AppCtrl" ng-cloak="" class="buttondemoBasicUsage" ng-app="MyApps">
-      <md-content>
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
-          <md-button class="md-raised">Button</md-button>
-          <md-button class="md-raised md-primary">Primary</md-button>
-        </section>
-      </md-content>
+
+    <div ng-controller="NewGamerCtrl as ctrl" class="md-padding dialogdemoBasicUsage" id="popupContainer" ng-cloak="">
+      <div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="" layout-align="center">
+        <md-button ng-click="ctrl.showPrompt()">
+          Show Prompt
+        </md-button>
+      </div>
+      <div ng-if="status" id="status">
+        <b layout="row" layout-align="center center" class="md-padding">
+          {{status}}
+        </b>
+      </div>
     </div>
+
     <%= yield %>
 
     <footer class="header">
     </footer>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>

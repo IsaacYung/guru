@@ -31,7 +31,9 @@ gem 'foundation-rails'
 
 gem 'angularjs-rails'
 
-gem 'rails-angular-material'
+gem 'bower-rails', '~> 0.10.0'
+
+gem 'rails-angular-material', :git => 'https://github.com/IsaacYung/rails-angular-material.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
