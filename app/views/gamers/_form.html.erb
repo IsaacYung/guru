@@ -2,7 +2,6 @@
   <% if @gamer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>
-
       <ul>
       <% @gamer.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -23,12 +22,10 @@
     <%= f.label :age %><br>
     <%= f.number_field :age %>
   </div>
-
   <md-dialog-actions layout="row">
     <span flex></span>
     <md-button type="submit" name="commit" ng-click="answer('useful')" style="margin-right:20px;">
       Jogar
     </md-button>
   </md-dialog-actions>
-
 <% end %>

@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="dialog1.tmpl.html">
+  <md-dialog aria-label="Novo Jogador"  ng-cloak>
+    <form>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>O Guru não sabe de tudo. Quem é você?</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content>
+        <div class="md-dialog-content">
+          <%= render 'form' %>
+        </div>
+      </md-dialog-content>
+    </form>
+  </md-dialog>
+</script>

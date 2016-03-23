@@ -1,8 +1,8 @@
 <div class="new-gamer">
-  <h1>Novo Jogador</h1>
-
-  <%= render 'form' %>
-
-  <%= link_to 'Voltar', gamers_path,  class: "button" %>
-
+  <div ng-controller="NewGamerCtrl" class="dialogdemoBasicUsage" id="popupContainer" ng-cloak="">
+    <div class="dialog-demo-content" layout="row" layout-wrap="" layout-margin="" layout-align="center">
+      <span ng-init="showAdvanced($event)"></span>
+      <%= render 'formscript' %>
+    </div>
+  </div>
 </div>

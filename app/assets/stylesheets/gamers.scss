@@ -12,6 +12,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-a', endColorstr='$color-b',GradientType=1 );
 }
 
+footer {
+  height: 3rem;
+  width: 100%;
+  margin-top: 5rem;
+  position: fixed;
+  bottom: 0;
+}
+
 .body-app {
   background-color: $dark-gray;
   color: $white;
@@ -41,13 +49,9 @@
   }
 }
 
-footer {
-  @extend .header;
-  height: 8rem;
-  width: 100%;
-  margin-top: 5rem;
-  position: fixed;
-  bottom: 0;
+.content {
+  background-color: $dark-gray;
+  padding-bottom: 2rem;
 }
 
 .guru-presenter-symbol {
